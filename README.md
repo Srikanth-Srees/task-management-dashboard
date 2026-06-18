@@ -24,7 +24,7 @@ Make sure you have Node.js and the Angular CLI installed.
    cd task-management-dashboard
    ```
 2. Run `npm install` to get the dependencies.
-3. **Environment Setup:** The application connects to a mock API by default. You can change this API URL by updating the `apiUrl` variable inside `src/       environments/environment.ts`.
+3. **Environment Setup:** The application connects to a mock API by default. You can change this API URL by updating the `apiUrl` variable inside `src/environments/environment.ts`.
 4. Run `ng serve` to spin up the dev server. It will be available at `http://localhost:4200/`.
 5. If you want to build for production, just run `ng build`.
 
@@ -52,4 +52,8 @@ I spent roughly 3 hours on this:
 - **1 hour:** Core logic, setting up the Reactive Forms, and wiring up the mock API.
 - **1 hour:** Refactoring to use Signals for the filters, fixing TypeScript warnings, and general cleanup.
 
+## AI Usage Summary
 
+AI tools were used sparingly to improve development speed and productivity. They were primarily used for guidance on Angular best practices, architectural suggestions, and troubleshooting.
+
+All implementation decisions, coding, integration, testing, and debugging were performed manually.
