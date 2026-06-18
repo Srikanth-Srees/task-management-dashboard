@@ -1,0 +1,33 @@
+<div class="page">
+  <div class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <div class="badge">TEAM WORKSPACE</div>
+        <h1>Task Dashboard</h1>
+        <p>Manage and track your team's tasks in one place</p>
+      </div>
+      <div class="hero-graphic">
+        <div class="graphic-mockup">
+          <div class="graphic-line"></div>
+          <div class="graphic-line short"></div>
+          <div class="graphic-circle check">✓</div>
+          <div class="graphic-circle plus">+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <app-task-stats [tasks]="tasks()"></app-task-stats>
+    <app-task-filter (searchChanged)="onSearch($event)" (statusChanged)="onStatusChange($event)">
+    </app-task-filter>
+
+    <div class="main-content">
+      <div class="left">
+        <app-task-form (taskAdded)="addTask($event)"></app-task-form>
+      </div>
+      <div class="right">
+        <app-task-list [tasks]="filteredTasks()"></app-task-list>
+      </div>
+    </div>
+  </div>
+</div>

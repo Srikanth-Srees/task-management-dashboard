@@ -1,59 +1,38 @@
-# TaskDashboard
+# Task Management Dashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
+This is my submission for the Frontend Engineering Assessment. It's a responsive task management UI built with Angular.
 
-## Development server
+## Setup Instructions
 
-To start a local development server, run:
+Make sure you have Node.js and the Angular CLI installed.
 
-```bash
-ng serve
-```
+1. Clone the repo and navigate into the project folder.
+2. Run `npm install` to get the dependencies.
+3. Run `npm start` to spin up the dev server. It will be available at `http://localhost:4200/`.
+4. If you want to build for production, just run `npm run build`.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Architecture Decisions
 
-## Code scaffolding
+I went with a modern Angular approach (v17+) using standalone components so I wouldn't have to deal with NgModules.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+For state management, I used a mix of RxJS and Angular Signals. The `TaskService` holds the main state in a `BehaviorSubject`, which keeps the API calls and data logic out of the UI components. Then, in the `Dashboard` component, I sync that data into a Signal. This made it really easy to use a `computed()` signal for the filtering logic—it automatically updates the UI whenever the search text or status dropdown changes, which saves me from having to manually manage change detection or worry about the UI getting out of sync.
 
-```bash
-ng generate component component-name
-```
+I also used strictly typed Reactive Forms (`nonNullable.group`) for the "Add Task" feature so the data shape is guaranteed to match my `CreateTaskDTO` interface before it even hits the service. For the stats calculation, I used a single array `reduce` pass instead of chaining a bunch of filters together to keep it fast.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Design System & UI
 
-```bash
-ng generate --help
-```
+I decided not to use a heavy component library like Angular Material or Bootstrap. Instead, I built everything from scratch using standard SCSS. 
 
-## Building
+**Why custom SCSS?**
+I wanted full control over the look and feel. It keeps the bundle size small and let me create a cleaner, more modern dark-mode UI without having to fight a framework's default styles or worry about overriding heavy external stylesheets.
 
-To build the project run:
+**Components:**
+Everything you see (the cards, the stats widgets, the forms, the inputs) is 100% custom-built. No third-party UI libraries were used. I set up some CSS variables for colors and spacing to keep things consistent, and used standard media queries (flexbox/grid) to make sure the layout responds properly on mobile, tablet, and desktop.
 
-```bash
-ng build
-```
+## Time Spent
+I spent roughly 3 hours on this:
+- **1 hour:** UI layout and writing the custom SCSS.
+- **1 hour:** Core logic, setting up the Reactive Forms, and wiring up the mock API.
+- **1 hour:** Refactoring to use Signals for the filters, fixing TypeScript warnings, and general cleanup.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

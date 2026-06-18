@@ -1,0 +1,45 @@
+<div class="form-card">
+  <div class="form-header">
+    <div class="icon-circle">
+      <span class="material-icons">playlist_add_check</span>
+    </div>
+    <div>
+      <h2>Add Task</h2>
+      <p>Create a new task for your team</p>
+    </div>
+  </div>
+
+  <form [formGroup]="taskForm" (ngSubmit)="submit()">
+    <div class="form-field">
+      <label>Title</label>
+      <input placeholder="What needs to be done?" formControlName="title" />
+    </div>
+    <div class="form-field">
+      <label>Status</label>
+      <select formControlName="status">
+        <option>Pending</option>
+        <option>In Progress</option>
+        <option>Completed</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label>Priority</label>
+      <select formControlName="priority">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label>Assignee</label>
+      <input placeholder="Team member name" formControlName="assignee" />
+    </div>
+    <div class="form-field">
+      <label>Due Date</label>
+      <input type="date" formControlName="dueDate" />
+    </div>
+    <button type="submit" [disabled]="taskForm.invalid">
+      <span class="material-icons">add</span> Add Task
+    </button>
+  </form>
+</div>

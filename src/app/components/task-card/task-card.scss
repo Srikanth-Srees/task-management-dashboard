@@ -1,0 +1,123 @@
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+.card.border-low::before {
+  background: #64748b;
+}
+.card.border-medium::before {
+  background: #f59e0b;
+}
+.card.border-high::before {
+  background: #ef4444;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.task-id {
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+}
+.status-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+.badge-pending {
+  background: #fef3c7;
+  color: #d97706;
+}
+.badge-in-progress {
+  background: #dbeafe;
+  color: #2563eb;
+}
+.badge-completed {
+  background: #dcfce3;
+  color: #16a34a;
+}
+
+.task-title {
+  margin: 0 0 16px 0;
+  font-size: 15px;
+  color: #0f172a;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.priority-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.priority-badge .material-icons {
+  font-size: 12px;
+}
+.prio-high {
+  background: #fee2e2;
+  color: #ef4444;
+}
+.prio-medium {
+  background: #ffedd5;
+  color: #f97316;
+}
+.prio-low {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+}
+.assignee-name {
+  color: #475569;
+}
+.due-row .material-icons {
+  font-size: 16px;
+  color: #94a3b8;
+}

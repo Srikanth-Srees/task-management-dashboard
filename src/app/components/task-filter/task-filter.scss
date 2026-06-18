@@ -1,0 +1,67 @@
+.filter-card {
+  background: white;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.filter-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-wrapper .material-icons {
+  position: absolute;
+  left: 12px;
+  color: #94a3b8;
+  font-size: 18px;
+}
+.input-wrapper input {
+  padding: 10px 10px 10px 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  width: 260px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+.input-wrapper input:focus {
+  border-color: #3b82f6;
+}
+select {
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  width: 180px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+  color: #0f172a;
+  font-family: inherit;
+}
+select:focus {
+  border-color: #3b82f6;
+}
+@media (max-width: 768px) {
+  .filter-card {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .input-wrapper input,
+  select {
+    width: 100%;
+  }
+}

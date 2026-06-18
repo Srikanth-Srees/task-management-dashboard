@@ -1,0 +1,24 @@
+<div class="filter-card">
+  <div class="filter-group">
+    <label>Search Tasks</label>
+    <div class="input-wrapper">
+      <span class="material-icons">search</span>
+      <input
+        type="text"
+        placeholder="Search by title..."
+        [(ngModel)]="searchText"
+        (input)="onSearch()"
+      />
+    </div>
+  </div>
+
+  <div class="filter-group status-filter">
+    <label>Filter by Status</label>
+    <select [(ngModel)]="selectedStatus" (change)="onStatusChange()">
+      <option value="All">All</option>
+      <option value="Pending">Pending</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+</div>
