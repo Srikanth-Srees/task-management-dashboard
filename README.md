@@ -1,6 +1,6 @@
 # Task Management Dashboard
 
-![Task Dashboard Screenshot](screenshot.png)
+![Task Dashboard Screenshot](https://res.cloudinary.com/drroyvl5p/image/upload/v1781757907/Screenshot_from_2026-06-18_09-36-35_jci3hb.png)
 
 This repository contains my submission for the Frontend Engineering Assessment. It is a responsive Task Management Dashboard built with Angular.
 
@@ -24,9 +24,7 @@ Make sure you have Node.js and the Angular CLI installed.
    cd task-management-dashboard
    ```
 2. Run `npm install` to get the dependencies.
-3. **Environment Setup:**
-   The application uses Angular environment configuration. The API endpoint can be updated by modifying:
-   `src/environments/environment.ts`
+3. **Environment Setup:** The application connects to a mock API by default. You can change this API URL by updating the `apiUrl` variable inside `src/       environments/environment.ts`.
 4. Run `ng serve` to spin up the dev server. It will be available at `http://localhost:4200/`.
 5. If you want to build for production, just run `ng build`.
 
