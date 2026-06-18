@@ -1,15 +1,22 @@
 # Task Management Dashboard
 
+![Task Dashboard Screenshot](screenshot.png)
+
 This is my submission for the Frontend Engineering Assessment. It's a responsive task management UI built with Angular.
 
 ## Setup Instructions
 
 Make sure you have Node.js and the Angular CLI installed.
 
-1. Clone the repo and navigate into the project folder.
+1. Clone the repo and navigate into the project folder:
+   ```bash
+   git clone https://github.com/Srikanth-Srees/task-management-dashboard.git
+   cd task-management-dashboard
+   ```
 2. Run `npm install` to get the dependencies.
-3. Run `npm start` to spin up the dev server. It will be available at `http://localhost:4200/`.
-4. If you want to build for production, just run `npm run build`.
+3. **Environment Setup:** The application connects to a mock API by default. You can change this API URL by updating the `apiUrl` variable inside `src/environments/environment.ts`.
+4. Run `npm start` to spin up the dev server. It will be available at `http://localhost:4200/`.
+5. If you want to build for production, just run `npm run build`.
 
 ## Architecture Decisions
 
